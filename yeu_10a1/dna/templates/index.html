@@ -1,0 +1,21 @@
+<!-- dna_transformer/templates/dna_transformer/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNA Transformer</title>
+</head>
+<body>
+    <h2>DNA Transformer</h2>
+    <form method="post" action="{% url 'transform_dna' %}">
+        {% csrf_token %}
+        <label for="original_text">Enter DNA Sequence:</label>
+        <input type="text" id="original_text" name="original_text" required>
+        <input type="submit" value="Transform">
+    </form>
+    <h3>Original DNA Sequence:</h3>
+    <p>{{ original_text }}</p>
+    <h3>Transformed DNA Sequence:</h3>
+    <p>{{ transformed_text }}</p>
+</body>
+</html>
+
